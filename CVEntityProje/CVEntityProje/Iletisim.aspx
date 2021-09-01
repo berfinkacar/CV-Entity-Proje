@@ -1,0 +1,36 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="Iletisim.aspx.cs" Inherits="CVEntityProje.Iletisim" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <table class="table table-bordered" style="margin-left:20px; margin-right:20px">
+        <tr>
+            <th>ID</th>
+            <th>AD SOYAD</th>
+            <th>MAİL</th>
+            <th>KONU</th>
+            <th>MESAJI GÖR</th>
+          
+        </tr>
+        <tr>
+            <asp:Repeater ID="Repeater1" runat="server">
+               <ItemTemplate>
+                 <tr>
+                  <td> <%#Eval("id")  %></td>
+                  <td> <%#Eval("adsoyad")  %></td>
+                     <td> <%#Eval("mail")  %></td>
+                     <td> <%#Eval("konu")  %></td>
+
+                    <td>
+                         <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl='<%# "MesajDetay.Aspx?ID=" + Eval ("ID")%>' CssClass="btn btn-warning">Mesajı Gör...</asp:HyperLink> 
+
+                    </td>
+                </tr>
+               </ItemTemplate>
+            </asp:Repeater>
+        </tr>
+      
+    </table>
+
+
+</asp:Content>

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbCVEntityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblAdmin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kullaniciAdi" Type="varchar" MaxLength="10" />
+    <Property Name="sifre" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tblAdres">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="telefon" Type="varchar" MaxLength="20" />
+    <Property Name="mail" Type="varchar" MaxLength="50" />
+    <Property Name="adres" Type="varchar" MaxLength="50" />
+    <Property Name="konum" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="tblÇalışmalarım">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adres" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tblHakkımda">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bilgiler" Type="varchar" MaxLength="500" />
+    <Property Name="egitim" Type="varchar" MaxLength="500" />
+    <Property Name="isdeneyimleri" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="tblİletişim">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adsoyad" Type="varchar" MaxLength="50" />
+    <Property Name="mail" Type="varchar" MaxLength="50" />
+    <Property Name="mesaj" Type="varchar" MaxLength="500" />
+    <Property Name="konu" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblYetenekler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="yetenek" Type="varchar" MaxLength="50" />
+    <Property Name="derece" Type="tinyint" />
+  </EntityType>
+  <EntityContainer Name="dbCVEntityModelStoreContainer">
+    <EntitySet Name="tblAdmin" EntityType="Self.tblAdmin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAdres" EntityType="Self.tblAdres" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblÇalışmalarım" EntityType="Self.tblÇalışmalarım" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblHakkımda" EntityType="Self.tblHakkımda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblİletişim" EntityType="Self.tblİletişim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblYetenekler" EntityType="Self.tblYetenekler" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
